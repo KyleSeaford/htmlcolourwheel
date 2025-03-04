@@ -19,16 +19,12 @@ Navigate into the project directory:
   
 Access the application by going to: `http://127.0.0.1:8000/` You should see the Django welcome page.
 
-## Step 4: Create a Django App
-In Django, a project can contain multiple apps. Here's how to create an app called myapp.
 
-`python manage.py startapp myapp`
-
-Register the app by opening settings.py in your project directory (myproject/myproject/settings.py) and adding myapp to the INSTALLED_APPS list:
+Register the app by opening settings.py in your project directory (myproject/myproject/settings.py) and adding myproject to the INSTALLED_APPS list:
 ```python
 INSTALLED_APPS = [
     ...
-    'myapp',
+    'myproject',
 ]
 ```
 ## Step 5: Create Views and Templates
@@ -49,17 +45,6 @@ from .views import home
 
 urlpatterns = [
     path('', home, name='home'),
-]
-```
-Include the app URLs in the project by editing the main urls.py in your project directory (myproject/urls.py):
-
-```python
-from django.contrib import admin
-from django.urls import include, path
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('myapp.urls')),  # Include myapp routes
 ]
 ```
 
